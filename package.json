@@ -13,10 +13,10 @@
   },
   "dependencies": {
     "@notionhq/client": "^5.1.0",
-    "@sparticuz/chromium-min": "^131.0.0",
+    "@sparticuz/chromium-min": "^149.0.0",
     "lucide-react": "^0.544.0",
     "next": "15.5.9",
-    "puppeteer-core": "23.11.1",
+    "puppeteer-core": "24.23.1",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },

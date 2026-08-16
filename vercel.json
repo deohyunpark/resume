@@ -1,4 +1,7 @@
 {
+  "env": {
+    "AWS_LAMBDA_JS_RUNTIME": "nodejs22.x"
+  },
   "functions": {
     "src/app/api/generate-pdf/route.ts": {
       "maxDuration": 60,

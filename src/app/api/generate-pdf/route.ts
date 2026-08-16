@@ -7,7 +7,7 @@ export const maxDuration = 60;
 
 const CHROMIUM_PACK_URL =
     process.env.CHROMIUM_REMOTE_EXEC_PATH ??
-    'https://github.com/Sparticuz/chromium/releases/download/v131.0.0/chromium-v131.0.0-pack.tar';
+    'https://github.com/Sparticuz/chromium/releases/download/v149.0.0/chromium-v149.0.0-pack.x64.tar';
 
 let cachedExecutablePath: string | null = null;
 let chromiumDownloadPromise: Promise<string> | null = null;
@@ -45,15 +45,20 @@ async function getChromiumExecutablePath(): Promise<string> {
 
 async function launchBrowserOnVercel() {
     const chromium = (await import('@sparticuz/chromium-min')).default;
+    chromium.setGraphicsMode = false;
     const executablePath = await getChromiumExecutablePath();
 
     console.log('Using @sparticuz/chromium-min from:', CHROMIUM_PACK_URL);
+    console.log('Chromium executable:', executablePath);
+    console.log('LD_LIBRARY_PATH:', process.env.LD_LIBRARY_PATH ?? '(unset)');
 
     return puppeteer.launch({
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
+        args: puppeteer.defaultArgs({
+            args: chromium.args,
+            headless: 'shell',
+        }),
         executablePath,
-        headless: true,
+        headless: 'shell',
     });
 }
 
