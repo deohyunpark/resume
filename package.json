@@ -6,14 +6,14 @@
     "dev": "next dev --turbopack",
     "dev:github": "cross-env GITHUB_PAGES=true next dev --turbopack",
     "dev:vercel": "cross-env GITHUB_PAGES=false next dev --turbopack",
-    "build": "next build --turbopack",
-    "build:github-pages": "cross-env GITHUB_PAGES=true next build --turbopack",
+    "build": "next build",
+    "build:github-pages": "cross-env GITHUB_PAGES=true next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
     "@notionhq/client": "^5.1.0",
-    "@sparticuz/chromium": "^131.0.0",
+    "@sparticuz/chromium-min": "^131.0.0",
     "lucide-react": "^0.544.0",
     "next": "15.5.9",
     "puppeteer-core": "23.11.1",

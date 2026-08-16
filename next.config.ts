@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ['@sparticuz/chromium', 'puppeteer-core'],
+  serverExternalPackages: ['@sparticuz/chromium-min', 'puppeteer-core'],
+  outputFileTracingIncludes: {
+    '/api/generate-pdf': ['./node_modules/@sparticuz/chromium-min/**'],
+  },
   // GitHub Pages용 정적 export 설정 (배포 시에만 basePath 적용)
   ...(process.env.GITHUB_PAGES === 'true' && process.env.NODE_ENV === 'production' && {
     output: 'export',

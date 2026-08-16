@@ -17,7 +17,7 @@ export default function PDFDownloadButton() {
 
         try {
             // Puppeteer-core + @sparticuz/chromium를 사용하는 API 엔드포인트
-            const response = await fetch('/api/generate-pdf/', {
+            const response = await fetch('/api/generate-pdf', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
