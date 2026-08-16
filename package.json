@@ -16,7 +16,7 @@
     "@sparticuz/chromium": "^131.0.0",
     "lucide-react": "^0.544.0",
     "next": "15.5.9",
-    "puppeteer-core": "^24.22.3",
+    "puppeteer-core": "23.11.1",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
@@ -28,7 +28,7 @@
     "@types/react-dom": "^19",
     "cross-env": "^7.0.3",
     "eslint": "^9",
-    "eslint-config-next": "15.5.4",
+    "eslint-config-next": "15.5.9",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
