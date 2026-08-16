@@ -56,8 +56,8 @@ jobs:
     - name: Build for GitHub Pages
       run: |
         echo "Starting GitHub Pages build..."
-        echo "Current directory contents:"
-        ls -la
+        # Static export(output: export) does not support API routes — PDF runs on Vercel only
+        rm -rf src/app/api
         echo "Running npm run build:github-pages..."
         npm run build:github-pages 2>&1 | tee build.log
         echo "Build command exit code: $?"

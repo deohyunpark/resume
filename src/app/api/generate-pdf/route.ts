@@ -4,7 +4,6 @@ import { execSync } from 'child_process';
 
 export const runtime = 'nodejs';
 export const maxDuration = 60;
-export const dynamic = 'force-dynamic';
 
 const CHROMIUM_PACK_URL =
     process.env.CHROMIUM_REMOTE_EXEC_PATH ??
